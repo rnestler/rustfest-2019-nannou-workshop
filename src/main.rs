@@ -21,10 +21,13 @@ fn model(_app: &App) -> Model {
     }
 }
 
-fn update(_app: &App, model: &mut Model, _update: Update) {
+fn update(app: &App, model: &mut Model, _update: Update) {
     model.t += 0.01667;
-    model.x = model.t.sin() * 50.0;
-    model.y = (model.t * 1.5).sin() * 50.0;
+
+    let mouse_pos = app.mouse.position();
+
+    model.x = model.t.sin() * mouse_pos.x;
+    model.y = (model.t * 1.5).sin() * mouse_pos.y;
     model.size = (model.t * 2.0).sin() * 10.0 + 20.0;
 }
 
