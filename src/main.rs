@@ -38,8 +38,7 @@ fn view(app: &App, model: &Model, frame: &Frame) {
     //draw.background().color(rgba(0.0, 0.0, 0.0, 0.9));
 
     draw.rect()
-        .h(1000.0)
-        .w(1000.0)
+        .wh(app.window_rect().wh())
         .color(rgba(0.0, 0.0, 0.0, 0.03));
 
     draw.ellipse()
